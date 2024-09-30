@@ -1,0 +1,124 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  /* מאפשר מרכז את התוכן */
+  justify-content: center;
+  /* ליישר למרכז */
+  align-items: flex-start;
+  /* מרכז אנכי */
+  min-height: 100vh;
+  /* להבטיח שהתוכן יהיה במרכז הדף */
+}
+
+.container {
+  width: 400px;
+  /* קביעת רוחב קבוע לדברים */
+  text-align: center;
+  /* מרכז את הטקסט */
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  /* הוספה של רווח תחת הכותרת */
+}
+
+img {
+  max-width: 40%;
+  /* מתאם את גובה התמונה לרוחב */
+  height: auto;
+  /* שומר על פרופורציות */
+  margin-bottom: 20px;
+  /* רווחים תחת התמונה */
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+  background-color: #0056b3;
+}
+
+.active-tab {
+  background-color: #0056b3;
+  font-weight: bold;
+}
+
+.tab {
+  display: none;
+  /* Initially hidden */
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.tab.active {
+  display: block;
+  /* Show the active tab */
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  /* להרחיב את השדות לרוחב המלא של הטאב */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  /* make sure padding doesn't add to the width */
+  margin-bottom: 10px;
+  /* add space between inputs */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  /* make the button full width */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#dbMessage,
+#deleteMessage,
+#updateMessage,
+#dateRangeReport {
+  margin-top: 15px;
+  color: green;
+  /* or any color you prefer */
+}

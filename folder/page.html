@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Calorie Management System">
+    <title>Calorie Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-4 col-xl-6 col-lg-7 col-md-8 col-sm-10">
+
+
+                    <div class="text-center my-5">
+                        <img src="calorie-management.png" alt="logo" width="120">
+                    </div>
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger active" data-bs-toggle="tab" href="#addCalories">Add
+                                        Calories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" data-bs-toggle="tab" href="#viewReport">View Calorie
+                                        Report</a>
+                                </li>
+                            </ul>
+
+
+                            <div class="tab-content">
+                                <div id="addCalories" class="tab-pane container active"><br>
+                                    <form id="addCalorieForm" class="needs-validation" novalidate autocomplete="off">
+                                        <div class="mb-3">
+                                            <label for="date" class="form-label">Date</label>
+                                            <input id="date" type="date" class="form-control" name="date" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="category" class="form-label">Category</label>
+                                            <select id="category" class="form-select" name="category" required>
+                                                <option value="breakfast">Breakfast</option>
+                                                <option value="lunch">Lunch</option>
+                                                <option value="dinner">Dinner</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="description" class="form-label">Description</label>
+                                            <input id="description" type="text" class="form-control" name="description"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="calorie" class="form-label">Calories</label>
+                                            <input id="calorie" type="number" class="form-control" name="calorie"
+                                                required min="1">
+                                        </div>
+                                        <button type="submit" class="btn btn-danger">Add</button>
+                                    </form>
+                                    <div id="addMessageContainer" class="mt-3"></div>
+                                </div>
+
+
+                                <div id="viewReport" class="tab-pane container fade"><br>
+                                    <form id="getReportForm" class="needs-validation" novalidate autocomplete="off">
+                                        <div class="mb-3">
+                                            <label for="reportMonth" class="form-label">Month</label>
+                                            <input id="reportMonth" type="number" min="1" max="12" class="form-control"
+                                                name="month" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reportYear" class="form-label">Year</label>
+                                            <input id="reportYear" type="number" class="form-control" name="year"
+                                                required>
+                                        </div>
+                                        <button type="submit" class="btn btn-danger">Get Report</button>
+                                    </form>
+                                    <div id="reportResults" class="mt-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center mt-5 text-muted">
+                        &copy; 2024 Calorie Management System
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="idb.js" defer></script>
+</body>
+
+</html>

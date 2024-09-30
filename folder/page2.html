@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="styles.css"> <!-- כולל את קובץ ה-CSS -->
+</head>
+
+<body>
+  <div class="container"> <!-- הוספת מחלקת контейןר -->
+    <h1>Calorie Tracker</h1>
+    <img src="calorie-management.png">
+
+    <div class="tabs">
+      <span class="tab-button active-tab" onclick="showTab('addTab')">Add Calories</span>
+      <span class="tab-button" onclick="showTab('reportTab')">Show Report</span>
+      <span class="tab-button" onclick="showTab('deleteTab')">Delete Record</span>
+      <span class="tab-button" onclick="showTab('updateTab')">Update Record</span>
+      <span class="tab-button" onclick="showTab('dateRangeTab')">Show Records by Date</span>
+
+    </div>
+
+    <div id="addTab" class="tab active">
+      <form id="calorieForm">
+        <label for="calorie">Calories:</label>
+        <input type="number" id="calorie" required><br>
+
+        <label for="category">Category:</label>
+        <select id="category" required>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="other">Other</option>
+        </select><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" required><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date"><br>
+
+        <button type="submit">Add Calories</button> <!-- כפתור הוספה -->
+      </form>
+      <div id="dbMessage"></div>
+    </div>
+
+    <div id="reportTab" class="tab">
+      <button type="button" id="showReport">Show Records</button>
+      <div id="report"></div>
+    </div>
+
+    <div id="deleteTab" class="tab">
+      <label for="deleteId">Record ID to delete:</label>
+      <input type="number" id="deleteId" required><br>
+      <button type="button" id="deleteRecord">Delete Record</button>
+      <div id="deleteMessage"></div>
+    </div>
+
+    <div id="updateTab" class="tab">
+      <label for="updateId">Record ID to update:</label>
+      <input type="number" id="updateId" required><br>
+
+      <label for="updateCalorie">New Calories:</label>
+      <input type="number" id="updateCalorie" required><br>
+
+      <label for="updateCategory">New Category:</label>
+      <select id="updateCategory" required>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="other">Other</option>
+      </select><br>
+
+      <label for="updateDescription">New Description:</label>
+      <input type="text" id="updateDescription" required><br>
+
+      <label for="updateDate">New Date:</label>
+      <input type="date" id="updateDate"><br>
+
+      <button type="button" id="updateRecord">Update Record</button>
+      <div id="updateMessage"></div>
+    </div>
+
+    <div id="dateRangeTab" class="tab">
+      <form id="dateRangeForm">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" required><br>
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" required><br>
+        <button type="submit">Show Records</button>
+      </form>
+      <div id="dateRangeReport"></div>
+    </div>
+  </div>
+
+  <script src="idb.js"></script>
+  <script src="manage.js"></script>
+</body>
+
+</html>
